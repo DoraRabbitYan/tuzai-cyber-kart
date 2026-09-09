@@ -1,0 +1,19 @@
+{
+  "name": "tuzai-cyber-kart",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5188",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 5188",
+    "test": "playwright test",
+    "inspect:canvas": "node scripts/inspect-threejs-canvas.mjs",
+    "verify:visual": "playwright test"
+  },
+  "dependencies": { "three": "^0.184.0" },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0", "@types/node": "^25.9.0", "@types/three": "^0.184.1",
+    "pngjs": "^7.0.0", "typescript": "^6.0.3", "vite": "^8.0.13"
+  }
+}

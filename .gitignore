@@ -1,0 +1,26 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.blend1
+__pycache__/
+*.py[cod]
+
+# Generated evidence remains local; rebuild inputs live under assets/.
+artifacts/*
+!artifacts/.gitkeep
+
+# Only rabbit/sheep v1 scenes are rebuild inputs; these are historical exports.
+assets/blender/v1/*.glb
+assets/blender/v1/*.png
+assets/blender/v1/dog.blend
+assets/blender/v1/dragon.blend
+
+# Local credentials, editor state and operating-system files.
+.env
+.env.*
+!.env.example
+.npmrc
+*.log
+.DS_Store
+Thumbs.db
