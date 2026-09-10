@@ -4,7 +4,7 @@
 
 项目使用 Three.js、TypeScript、Vite 与 Blender 制作，仓库包含完整代码、运行时资源与可重建模型源。它是单机街机竞速体验，不需要游戏服务器或账号。
 
-**[在线试玩 →](https://dorarabbityan.github.io/tuzai-cyber-kart/)** · 电脑用键盘驾驶，手机使用屏幕触控按钮。
+**[在线试玩 →](https://cyber-kart.jocund-mesa-3022.chatgpt.site)** · 电脑用键盘驾驶，手机使用屏幕触控按钮。
 
 ![赛博卡丁车车库实际运行截图](docs/images/garage.png)
 
@@ -46,7 +46,9 @@ npm run preview
 
 ### 网站发布
 
-网站由 GitHub Pages 托管。向默认分支 `codex/initial-release` 推送后，[部署工作流](.github/workflows/deploy.yml)会自动安装依赖、检查 TypeScript、构建并发布 `dist/`；也可在仓库 Actions 中手动运行 **Deploy Cyber Kart to GitHub Pages**。仓库 Settings → Pages 的发布源为 **GitHub Actions**。
+在线试玩使用 Sites 独立托管。更新游戏时，将验证后的完整 `dist/` 同步到网站发布工程，再发布到同一个 Sites 项目。
+
+[GitHub Pages](https://dorarabbityan.github.io/tuzai-cyber-kart/) 保留为备用地址。向默认分支 `codex/initial-release` 推送后，[部署工作流](.github/workflows/deploy.yml)会自动构建并更新该备用站；它不会自动更新 Sites 主站。也可在 Actions 中手动运行 **Deploy Cyber Kart to GitHub Pages**。
 
 模型、音频和字体与网站一同发布，资源路径使用相对 `base: './'`，适配 `/tuzai-cyber-kart/` 子目录。`.blend` 源文件、建模参考和本地测试记录不会进入网站构建包。
 
