@@ -8,7 +8,7 @@ declare global {
   }
 }
 async function ready(page:Page){
-  await page.goto('/?qa=1',{waitUntil:'domcontentloaded',timeout:60_000});
+  await page.goto('?qa=1',{waitUntil:'domcontentloaded',timeout:60_000});
   await page.waitForFunction(()=>window.__THREE_GAME_DIAGNOSTICS__?.state.loadedModels.length===4,null,{timeout:60_000});
   await expect(page.locator('#start-race')).toBeVisible();
 }
@@ -58,7 +58,7 @@ test('a failed required model leaves a stable actionable loading message',async(
     if(route.request().url().endsWith('/rabbit.glb'))return route.fulfill({status:503,body:'Unavailable'});
     await new Promise(resolve=>setTimeout(resolve,1200));await route.continue();
   });
-  await page.goto('/?qa=1',{waitUntil:'domcontentloaded'});
+  await page.goto('?qa=1',{waitUntil:'domcontentloaded'});
   await expect(page.getByText(/资源加载失败/)).toBeVisible();
   await page.waitForTimeout(3000);
   await expect(page.getByText(/资源加载失败/)).toBeVisible();

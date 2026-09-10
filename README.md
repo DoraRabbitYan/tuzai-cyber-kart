@@ -4,6 +4,8 @@
 
 项目使用 Three.js、TypeScript、Vite 与 Blender 制作，仓库包含完整代码、运行时资源与可重建模型源。它是单机街机竞速体验，不需要游戏服务器或账号。
 
+**[在线试玩 →](https://dorarabbityan.github.io/tuzai-cyber-kart/)** · 电脑用键盘驾驶，手机使用屏幕触控按钮。
+
 ![赛博卡丁车车库实际运行截图](docs/images/garage.png)
 
 ## 三条路线，四位车手
@@ -41,6 +43,12 @@ npm run preview
 ```
 
 `dist/` 可以部署到静态网站根目录或带结尾斜线的子目录，不需要游戏后端。首次加载后，游戏逻辑和音频在浏览器本地运行；未实现离线缓存安装。
+
+### 网站发布
+
+网站由 GitHub Pages 托管。向默认分支 `codex/initial-release` 推送后，[部署工作流](.github/workflows/deploy.yml)会自动安装依赖、检查 TypeScript、构建并发布 `dist/`；也可在仓库 Actions 中手动运行 **Deploy Cyber Kart to GitHub Pages**。仓库 Settings → Pages 的发布源为 **GitHub Actions**。
+
+模型、音频和字体与网站一同发布，资源路径使用相对 `base: './'`，适配 `/tuzai-cyber-kart/` 子目录。`.blend` 源文件、建模参考和本地测试记录不会进入网站构建包。
 
 ## 驾驶
 
